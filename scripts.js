@@ -1,17 +1,17 @@
-function preload() {
-    img = loadImage('winebottle.png');
-    img2 = loadImage('logo.png');
-  }
-  
-  function setup(){
-      img2;
-      img;
-  }
-  
-  function draw(){
-      
-  }
-       
+var img = new Image();
+var img2 = new Image();
+
+img.onload = function() {
+  somcanvas.getContext('2d').drawImage(img, 0, 0);
+};
+img.src = 'winebottle.png';
+
+img2.onload = function() {
+    somcanvas.getContext('2d').drawImage(img2, 0, 0);
+  };
+  img2.src = 'logo.png';
+
+ 
        var Engine = Matter.Engine,
         Render = Matter.Render,
         Runner = Matter.Runner,
