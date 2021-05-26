@@ -7,17 +7,20 @@ body {
   color: white;
   position: absolute;
   font-family: lato;
-  font-size: 9vw;
+  font-size: 8vw;
   color: #b50000;
   font-weight: 300;
   padding: 2vw;
-  line-height: 1;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
 }
 
 #tickets {
-  font-size: 3vw;
+  font-size: 0.4em;
   position: relative;
-  top: -4vw;
+  top: 0.3vw;
+  letter-spacing: normal;
+  font-weight: 300;
 }
 
 a {
@@ -30,13 +33,13 @@ a {
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  width: 20vw;
+  width: 25vw;
   z-index: 2;
 }
 
 #nightinnlogo {
   width: 100%;
   position: absolute;
-  left: 75vw;
+  left: 70vw;
   padding: 2vw;
 }

@@ -23,6 +23,13 @@ world = engine.world;
 
 var w = window.innerWidth;
 var h = window.innerHeight;
+console.log(w);
+console.log(h);
+
+// 845 - 400 - w/2.11
+// 1535 - 600 - h/2.55
+
+
 var stack;
 
     var render = Render.create({
@@ -46,7 +53,7 @@ var stack;
 
     // add bodies
     Composite.add(world, [
-        Bodies.rectangle(400, 600, 1200, 50.5, { 
+        Bodies.rectangle(400, 600, w*2, 10, { 
             isStatic: true, 
             render: { 
                 fillStyle: 'black',
@@ -56,7 +63,7 @@ var stack;
     ]);
 
     loadImage(
-        "logo.PNG",
+        "images.png",
         url => {
           console.log("Success");
           Composite.add(world, [
@@ -65,7 +72,7 @@ var stack;
                     friction: 0.5,
                     render: {
                     sprite: {
-                        texture: 'logo.PNG',
+                        texture: 'logo.png',
                     }}
                 });
             }) 
@@ -76,6 +83,30 @@ var stack;
         }
       );
 
+      loadImage(
+        "images.png",
+        url => {
+          console.log("Success");
+          Composite.add(world, [
+            stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
+                return Bodies.circle(x, y, Common.random(15, 30), { 
+                    friction: 0.5,
+                    render: {
+                    sprite: {
+                        texture: 'logo.png',
+                    }}
+                });
+            }) 
+        ]);
+        },
+        () => {
+          console.log("Error  Loading ");
+        }
+      );
+
+
+
+ 
         // Composite.add(world, [
         //     stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
         //         return Bodies.circle(x, y, Common.random(15, 30), { 
