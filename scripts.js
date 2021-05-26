@@ -1,13 +1,3 @@
-var myimages=new Array()
-function preloadimages(){
-for (i=0;i<preloadimages.arguments.length;i++){
-myimages[i]=new Image()
-myimages[i].src=preloadimages.arguments[i]
-}
-}
-
-preloadimages("logo.png");
-
 
 
 var Engine = Matter.Engine,
@@ -61,7 +51,7 @@ var h = window.innerHeight;
             render: {
                sprite: {
                 texture: 'logo.png',
-                wireframes: false
+                options: {wireframes: false}
             }}
         });
     });
