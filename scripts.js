@@ -1,4 +1,16 @@
-
+function preload() {
+    img = loadImage('winebottle.png');
+    img2 = loadImage('logo.png');
+  }
+  
+  function setup(){
+      img2;
+      img;
+  }
+  
+  function draw(){
+      
+  }
        
        var Engine = Matter.Engine,
         Render = Matter.Render,
@@ -17,7 +29,6 @@
 
     var w = window.innerWidth;
     var h = window.innerHeight;
-
 
 
 
