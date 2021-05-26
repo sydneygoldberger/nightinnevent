@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background: "black";
+}
+
+#text {
+  color: white;
+  position: absolute;
+  font-family: lato;
+  font-size: 9vw;
+  color: #b50000;
+  font-weight: 300;
+  padding: 2vw;
+  line-height: 1;
+}
+
+#tickets {
+  font-size: 3vw;
+  position: relative;
+  top: -4vw;
+}
+
+a {
+  text-decoration: none;
+  color: #b50000;
+  font-weight: 400;
+}
+
+#logobox {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 20vw;
+  z-index: 2;
+}
+
+#nightinnlogo {
+  width: 100%;
+  position: absolute;
+  left: 75vw;
+  padding: 2vw;
+}
