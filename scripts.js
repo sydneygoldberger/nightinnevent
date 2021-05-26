@@ -83,26 +83,7 @@ var stack;
         }
       );
 
-      loadImage(
-        "images.png",
-        url => {
-          console.log("Success");
-          Composite.add(world, [
-            stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
-                return Bodies.circle(x, y, Common.random(15, 30), { 
-                    friction: 0.5,
-                    render: {
-                    sprite: {
-                        texture: 'logo.png',
-                    }}
-                });
-            }) 
-        ]);
-        },
-        () => {
-          console.log("Error  Loading ");
-        }
-      );
+
 
 
 
