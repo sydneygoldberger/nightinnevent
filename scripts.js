@@ -1,8 +1,15 @@
-var image = new Image(); 
-image.src = "logo.png";
-image.onload = function(){
-    ctx.drawImage(this,0,0);
+var images = [];
+function preload() {
+    for (var i = 0; i < images.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.images[i];
+    }
 }
+
+preload(
+    "logo.png",
+)
+
 
        var Engine = Matter.Engine,
         Render = Matter.Render,
