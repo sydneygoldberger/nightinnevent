@@ -1,7 +1,8 @@
-
- var image = new Image();
- image.src = "logo.png";
-
+var image = new Image(); 
+image.src = "logo.png";
+image.onload = function(){
+    ctx.drawImage(this,0,0);
+}
 
        var Engine = Matter.Engine,
         Render = Matter.Render,
