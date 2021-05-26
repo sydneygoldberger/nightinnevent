@@ -4,7 +4,7 @@ const loadImage = (url, onSuccess, onError) => {
       onSuccess(img.src);
     };
     img.onerror = onError();
-    img.src = url;
+    img.src = 'logo.PNG';
   };
 
   
@@ -56,7 +56,7 @@ var stack;
     ]);
 
     loadImage(
-        "logo.png",
+        "logo.PNG",
         url => {
           console.log("Success");
           Composite.add(world, [
@@ -65,7 +65,7 @@ var stack;
                     friction: 0.5,
                     render: {
                     sprite: {
-                        texture: 'logo.png',
+                        texture: 'logo.PNG',
                     }}
                 });
             }) 
