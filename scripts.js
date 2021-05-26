@@ -1,11 +1,14 @@
-const loadImage = (url, onSuccess, onError) => {
-    const img = new Image();
-    img.onload = () => {
-      onSuccess(img.src);
-    };
-    img.src = url;
-  };
-  
+var myimages=new Array()
+function preloadimages(){
+for (i=0;i<preloadimages.arguments.length;i++){
+myimages[i]=new Image()
+myimages[i].src=preloadimages.arguments[i]
+}
+}
+
+preloadimages("logo.png");
+
+
 
 var Engine = Matter.Engine,
 Render = Matter.Render,
@@ -52,24 +55,6 @@ var h = window.innerHeight;
     ]);
 
 
-    loadImage(
-        "logo.png",
-        url => {
-          console.log("Success");
-          Composite.add(world, [
-            Bodies.circle(340, 340, 100, {
-              render: {
-                sprite: {
-                  texture: 'logo.png' // set texture here
-                }
-              }
-            })
-          ]);
-        },
-  
-      );
-
-    
     var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
         return Bodies.circle(x, y, Common.random(15, 30), { 
             friction: 0.5,
@@ -84,8 +69,7 @@ var h = window.innerHeight;
     
     
     Composite.add(world, [
-        stack,  
- 
+        stack,   
     ]);
 
 
