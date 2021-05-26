@@ -1,23 +1,4 @@
-// var img = new Image();
-// var img2 = new Image();
 
-
-// img.onload = function() {
-//   document.getContext('2d').drawImage(img, 0, 0);
-// };
-// img.src = 'winebottle.png';
-
-// img2.onload = function() {
-//     document.getContext('2d').drawImage(img2, 0, 0);
-//   };
-//   img2.src = 'logo.png';
-
-
-var image = new Image(); 
-image.src = "winebottle.png";
-image.onload = function(){
-    ctx.drawImage(image,0,0);
-}
 
  
        var Engine = Matter.Engine,
