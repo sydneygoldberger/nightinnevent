@@ -1,37 +1,31 @@
-var images = [];
 function preload() {
-    for (var i = 0; i < images.length; i++) {
-        images[i] = new Image();
-        images[i].src = preload.images[i];
-    }
+    img = loadImage('logo.png');
 }
 
-preload(
-    "logo.png",
-)
+var Engine = Matter.Engine,
+Render = Matter.Render,
+Runner = Matter.Runner,
+Composite = Matter.Composite,
+Composites = Matter.Composites,
+Common = Matter.Common,
+MouseConstraint = Matter.MouseConstraint,
+Mouse = Matter.Mouse,
+Bodies = Matter.Bodies;
 
-
-       var Engine = Matter.Engine,
-        Render = Matter.Render,
-        Runner = Matter.Runner,
-        Composite = Matter.Composite,
-        Composites = Matter.Composites,
-        Common = Matter.Common,
-        MouseConstraint = Matter.MouseConstraint,
-        Mouse = Matter.Mouse,
-        Bodies = Matter.Bodies;
-
-
-    // create engine
-    var engine = Engine.create(),
-        world = engine.world;
+var engine = Engine.create(),
+    world = engine.world;
 
     var w = window.innerWidth;
     var h = window.innerHeight;
 
+function setup() {
+}
+  
+function draw() {
 
+}
+  
 
-    // create renderer
     var render = Render.create({
         element: document.body,
         engine: engine,
