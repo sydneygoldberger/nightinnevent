@@ -1,5 +1,8 @@
 
- 
+ var image = new Image();
+ image.src = "logo.png";
+
+
        var Engine = Matter.Engine,
         Render = Matter.Render,
         Runner = Matter.Runner,
@@ -50,15 +53,6 @@
     ]);
 
 
-    var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
-        return Bodies.circle(x, y, Common.random(15, 30), { 
-            friction: 0.5,
-            render: {
-               sprite: {
-                texture: 'winebottle.png'
-            }}
-        });
-    });
 
     var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
         return Bodies.circle(x, y, Common.random(15, 30), { 
