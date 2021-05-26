@@ -1,5 +1,14 @@
 
+const loadImage = (url, onSuccess, onError) => {
+    const img = new Image();
+    img.onload = () => {
+      onSuccess(img.src);
+    };
+    img.onerror = onError();
+    img.src = url;
+  };
 
+  
 var Engine = Matter.Engine,
 Render = Matter.Render,
 Runner = Matter.Runner,
@@ -15,7 +24,7 @@ world = engine.world;
 
 var w = window.innerWidth;
 var h = window.innerHeight;
-
+var stack;
 
     var render = Render.create({
         element: document.body,
@@ -47,23 +56,40 @@ var h = window.innerHeight;
         })
     ]);
 
+    loadImage(
+        "logo.png",
+        url => {
+          console.log("Success");
+          Composite.add(world, [
+            stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
+                return Bodies.circle(x, y, Common.random(15, 30), { 
+                    friction: 0.5,
+                    render: {
+                    sprite: {
+                        texture: 'logo.png',
+                    }}
+                });
+            }) 
+        ]);
+        },
+        () => {
+          console.log("Error  Loading ");
+        }
+      );
 
-    var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
-        return Bodies.circle(x, y, Common.random(15, 30), { 
-            friction: 0.5,
-            render: {
-               sprite: {
-                texture: 'logo.png',
-                options: {wireframes: false}
-            }}
-        });
-    });
+        // Composite.add(world, [
+        //     stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
+        //         return Bodies.circle(x, y, Common.random(15, 30), { 
+        //             friction: 0.5,
+        //             render: {
+        //             sprite: {
+        //                 texture: 'logo.png',
+        //             }}
+        //         });
+        //     }) 
+        // ]);
+    
 
-    
-    
-    Composite.add(world, [
-        stack,   
-    ]);
 
 
     // add mouse control
@@ -99,6 +125,8 @@ var h = window.innerHeight;
             max: { x: render.bounds.max.x + 100, y: render.bounds.max.y }
         };
     }
+
+
 
 
 
