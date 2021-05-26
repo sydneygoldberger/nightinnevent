@@ -40,7 +40,10 @@ var h = window.innerHeight;
     Composite.add(world, [
         Bodies.rectangle(400, 600, 1200, 50.5, { 
             isStatic: true, 
-            render: { fillStyle: 'black' },
+            render: { 
+                fillStyle: 'black',
+                options: {wireframes: false}
+            },
         })
     ]);
 
@@ -70,7 +73,8 @@ var h = window.innerHeight;
             constraint: {
                 stiffness: 0.4,
                 render: {
-                    visible: false
+                    visible: false,
+                    options: {wireframes: false}
                 }
             }
         });
