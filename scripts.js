@@ -3,8 +3,7 @@ const loadImage = (url, onSuccess, onError) => {
     img.onload = () => {
       onSuccess(img.src);
     };
-    img.onerror = onError();
-    img.src = 'logo.png';
+    img.src = url;
   };
   
 
@@ -49,7 +48,6 @@ var h = window.innerHeight;
         Bodies.rectangle(400, 600, 1200, 50.5, { 
             isStatic: true, 
             render: { fillStyle: 'black' },
-           
         })
     ]);
 
@@ -60,23 +58,18 @@ var h = window.innerHeight;
           console.log("Success");
           Composite.add(world, [
             Bodies.circle(340, 340, 100, {
-              density: 0.0005,
-              frictionAir: 0.06,
-              restitution: 0.3,
-              friction: 0.01,
               render: {
                 sprite: {
-                  texture: url // set texture here
+                  texture: 'logo.png' // set texture here
                 }
               }
             })
           ]);
         },
-        () => {
-          console.log("Error  Loading ");
-        }
+  
       );
 
+    
     var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
         return Bodies.circle(x, y, Common.random(15, 30), { 
             friction: 0.5,
@@ -87,6 +80,7 @@ var h = window.innerHeight;
             }}
         });
     });
+
     
     
     Composite.add(world, [
